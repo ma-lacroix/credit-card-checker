@@ -5,7 +5,7 @@
 
 
 int main(int argc, char **argv) {
-    
+    std::cout << "Starting app" << std::endl;
     std::vector<creditCard*> cards;
     
     for (size_t i = 1; i < argc; ++i) {
