@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>   
 
-creditCard::creditCard(std::string new_number) {
+creditCard::creditCard(std::string new_number):card(new_number) {
     if(new_number.size()==11){
         std::cout << "Valid CC number" << std::endl;
         this->cc_number = new_number;
@@ -51,6 +51,6 @@ std::vector<int> creditCard::changeToInt() {
     return numbers;
 }
 
-std::string creditCard::getCC() {
+std::string creditCard::getNumber() {
     return cc_number.substr(0,3) + "XXXXXXXX";
 }
