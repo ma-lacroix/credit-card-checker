@@ -5,16 +5,57 @@
 #include "card.hpp"
 
 
+void printAllCards(std::vector<card*> &cards) {
+    for (size_t i = 0; i < cards.size(); ++i) {
+        std::cout << cards.at(i)->getNumber() << std::endl;
+    }
+}
+
 int main(int argc, char **argv) {
     std::cout << "Starting app" << std::endl;
     std::vector<card*> cards;
-    
-    for (size_t i = 1; i < argc; ++i) {
-        cards.push_back(new creditCard(static_cast<std::string>(argv[i])));
-        std::cout << cards.at(i-1)->getNumber() << std::endl;
-        std::cout << cards.at(i-1)->getStatus() << std::endl;
-        cards.at(i-1)->checkStatus();
-        std::cout << cards.at(i-1)->getStatus() << std::endl;
+    char command;
+
+    std::string menu = 
+        "1 - Create a new credit card\n"
+        "2 - Create a new bank card\n"
+        "3 - Show all cards\n"
+        "q - quit program\n";
+
+    while (true) {
+        
+        std::cout << menu;
+        std::cin >> command;
+        
+        if (command == '1') {
+
+            std::string number;
+            std::cout << "Enter credit card number: ";
+            std::cin >> number;
+            cards.push_back(new creditCard(number));
+
+        } else if (command == '2') {
+            
+            std::string number;
+            std::cout << "Enter bank card number: ";
+            std::cin >> number;
+            cards.push_back(new creditCard(number));
+
+        } else if (command == '3') {
+            
+            printAllCards(cards);
+
+        } else if (command == 'q') {
+            
+            break;
+
+        } else {
+            
+            std::cout << "Command invalid" << std::endl;
+            
+        }
+
+
     }
 
     return 0;

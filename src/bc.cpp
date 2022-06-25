@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>   
 
+// TODO: this is only a copy of cc.cpp
+
 bankCard::bankCard(std::string new_number):card(new_number) {
     if(new_number.size()==11){
         std::cout << "Valid CC number" << std::endl;
