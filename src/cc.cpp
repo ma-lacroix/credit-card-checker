@@ -8,11 +8,13 @@ creditCard::creditCard(std::string new_number):card(new_number) {
     if(new_number.size()==11){
         std::cout << "Valid CC number" << std::endl;
         this->cc_number = new_number;
+        this->card_type = 'c';
         this->status = true;
     } else {
         std::cout << "Invalid CC number" << std::endl;
         this->cc_number = "XXXXXXXXXX";
-        this->status = true;
+        this->card_type = 'c';
+        this->status = false;
     }
 };
 

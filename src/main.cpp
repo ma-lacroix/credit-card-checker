@@ -11,7 +11,7 @@ void printAllCards(std::vector<card*> &cards) {
     }
 }
 
-int main(int argc, char **argv) {
+int main() {
     std::cout << "Starting app" << std::endl;
     std::vector<card*> cards;
     char command;

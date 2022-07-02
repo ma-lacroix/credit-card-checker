@@ -6,6 +6,7 @@
 class creditCard: public card {
 private:
     std::string cc_number;
+    char card_type;
     bool status;    
 public:
     creditCard(std::string);

@@ -6,6 +6,7 @@
 class bankCard: public card {
 private:
     std::string bc_number;
+    char card_type;
     bool status;    
 public:
     bankCard(std::string);

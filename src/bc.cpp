@@ -8,13 +8,15 @@
 
 bankCard::bankCard(std::string new_number):card(new_number) {
     if(new_number.size()==11){
-        std::cout << "Valid CC number" << std::endl;
+        std::cout << "Valid BC number" << std::endl;
         this->bc_number = new_number;
+        this->card_type = 'b';
         this->status = true;
     } else {
-        std::cout << "Invalid CC number" << std::endl;
+        std::cout << "Invalid BC number" << std::endl;
         this->bc_number = "XXXXXXXXXX";
-        this->status = true;
+        this->card_type = 'b';
+        this->status = false;
     }
 };
 
